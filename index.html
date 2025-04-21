@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Robsona Tsiory - Portfolio</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      :root {
+        --bg-color: #fff;
+        --text-color: #000;
+        --card-bg: #f5f5f5;
+        --tag-bg: #eee;
+        --tag-border: #ccc;
+        --link-color: #000;
+      }
+
+      body.dark-mode {
+        --bg-color: #0f0f0f;
+        --text-color: #eee;
+        --card-bg: #1c1c1c;
+        --tag-bg: #222;
+        --tag-border: #555;
+        --link-color: #fff;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", sans-serif;
+        background: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.6;
+        transition: background 0.3s, color 0.3s;
+      }
+
+      .theme-toggle {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        font-size: 1.5em;
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: var(--text-color);
+        z-index: 1000;
+      }
+
+      header {
+        background: var(--card-bg);
+        padding: 30px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        border-bottom: 2px solid var(--text-color);
+      }
+
+      .profile-pic {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px var(--text-color);
+      }
+
+      .header-text {
+        text-align: center;
+      }
+
+      .header-text h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+      }
+
+      .header-text p {
+        margin: 5px 0;
+      }
+
+      .contact-icons {
+        margin-top: 10px;
+        font-size: 1.1em;
+      }
+
+      .contact-icons a {
+        margin: 0 10px;
+        color: var(--link-color);
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .contact-icons a i {
+        margin-right: 6px;
+      }
+
+      .contact-icons a:hover {
+        opacity: 0.7;
+      }
+
+      .section {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+
+      h2 {
+        color: var(--text-color);
+        border-bottom: 1px solid var(--tag-border);
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+      }
+
+      ul,
+      p {
+        margin-bottom: 10px;
+      }
+
+      .skills span,
+      .exp-tags span {
+        display: inline-block;
+        margin: 5px 5px 10px 0;
+        padding: 6px 12px;
+        background: var(--tag-bg);
+        color: var(--text-color);
+        border: 1px solid var(--tag-border);
+        border-radius: 15px;
+        font-size: 0.9em;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 0.9em;
+        background: var(--card-bg);
+        color: var(--text-color);
+        margin-top: 40px;
+      }
+
+      .education-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        padding: 5px 0;
+      }
+
+      .education-item strong {
+        display: block;
+      }
+
+      .education-location {
+        font-style: italic;
+        font-size: 0.95em;
+        color: var(--text-color);
+      }
+
+      .project-card {
+        display: flex;
+        flex-direction: row;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+        max-width: 1000px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+
+      .project-card img {
+        width: 200px;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .project-card-content {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .project-card-content a {
+        font-weight: bold;
+        color: #0366d6;
+        text-decoration: none;
+        margin-bottom: 5px;
+      }
+
+      .project-card-content p {
+        margin: 0;
+      }
+
+      @media (max-width: 600px) {
+        .project-card {
+          flex-direction: column;
+        }
+
+        .project-card img {
+          width: 100%;
+          height: 180px;
+        }
+      }
+
+      .controls {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      .lang-select {
+        background: var(--card-bg);
+        color: var(--text-color);
+        border: 1px solid var(--tag-border);
+        border-radius: 5px;
+        padding: 4px 8px;
+        font-size: 1em;
+        cursor: pointer;
+      }
+
+      /* Lang control */
+      [data-lang] {
+        display: none;
+      }
+
+      [data-lang].active {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Theme and Language Switch -->
+    <div style="display: flex; align-items: center; gap: 10px">
+      <button
+        class="theme-toggle"
+        onclick="toggleTheme()"
+        title="Changer de thème"
+      >
+        🌙
+      </button>
+      <!-- <select
+        class="lang-select"
+        onchange="switchLang(this.value)"
+        title="Changer de langue"
+      >
+        <option value="fr">🇫🇷</option>
+        <option value="en">🇬🇧</option>
+      </select>-->
+    </div>
+
+    <!-- Header -->
+    <header>
+      <img src="photo.jpeg" alt="Robsona Tsiory" class="profile-pic" />
+      <div class="header-text">
+        <h1>Robsona Tsiory</h1>
+        <p>Ingénieur logiciel (.NET) | Ingénieur data</p>
+        <div class="contact-icons">
+          <a href="mailto:robsonatsiory07@gmail.com"
+            ><i class="fas fa-envelope"></i> Gmail</a
+          >
+          <a href="tel:+261341399888"><i class="fas fa-phone"></i> Téléphone</a>
+          <a href="https://github.com/Lacoste27" target="_blank"
+            ><i class="fab fa-github"></i> GitHub</a
+          >
+          <a href="https://linkedin.com/in/robsona-tsiory" target="_blank"
+            ><i class="fab fa-linkedin"></i> LinkedIn</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- Résumé -->
+    <div class="section">
+      <h2>Résumé</h2>
+      <p>
+        Ingénieur informatique avec une expertise spécialisée avec la
+        technologie .NET et dans le développement de solutions logicielles
+        robustes et évolutives, couvrant toutes les étapes du processus, de
+        l'analyse des besoins à la conception de systèmes sur mesure. Fort d'une
+        solide connaissance du Big Data, j'ai participé à de nombreux projets
+        dans des domaines variés, démontrant ma capacité à m'adapter à des
+        environnements et des équipes diversifiés. Curieux et polyvalent, je
+        relève efficacement les défis de chaque projet grâce à mon approche
+        méthodique et collaborative.
+      </p>
+    </div>
+
+    <!-- Expériences -->
+    <div class="section">
+      <h2>Expériences professionnelles</h2>
+
+      <p>
+        <strong>ICP Conseil</strong> – Consultant développeur .NET (06/2024 –
+        Aujourd’hui, Lyon - à distance)
+      </p>
+      <ul>
+        <li>
+          Création et déploiement d’un robot automatisé pour les migrations de
+          données en utilisant SQL Server Intégration Services (SSIS)
+        </li>
+        <li>
+          Participation à la création d’un module d'aide à la prescription,
+          permettant aux utilisateurs de bénéficier de recommandations
+          personnalisées.
+        </li>
+        <li>
+          Conception et développement d’un module de prescription électronique,
+          facilitant la digitalisation des prescriptions.
+        </li>
+        <li>
+          Création des nouveaux modules avec ASP .NET Core (Telerik,
+          DevExpress), application mobile avec MAUI
+        </li>
+        <li>Expérience dans les systèmes d’information du domaine médical.</li>
+      </ul>
+      <div class="exp-tags">
+        <span>.NET Core</span><span>SSIS</span><span>Telerik</span
+        ><span>DevExpress</span><span>MAUI</span><span>SQL Server</span
+        ><span>HL7</span><span>SOAP Web Services</span
+        ><span>Transformation de données (ETL)</span><span>...</span>
+      </div>
+
+      <p>
+        <strong>NEWPACK</strong> – Développeur .NET Junior (01/2023 – 04/2024,
+        Antananarivo)
+      </p>
+      <ul>
+        <li>
+          Création d’une application avec ASP .NET MVC et SQL Server comme base
+          de données pour la gestion d’un entrepôt (suivi de stock, des
+          emplacements des produits, …)
+        </li>
+        <li>
+          Création d’un CRM en interne pour la gestion des clients, tableau de
+          bords pour chaque client
+        </li>
+        <li>
+          Développement d'un site web pour la gestion des plannings de
+          maintenance industrielle, permettant de suivre qui effectue quelle
+          tâche et à quelle date.
+        </li>
+        <li>
+          Migration d’une application 4D vers ASP .NET Core, migration des
+          données en utilisant SQL Server Intégration Services
+        </li>
+        <li>
+          Liaison des applications créer avec SAGE 100 à partir d’objet métier
+          SAGE (gestion de stock, gestion des clients, …)
+        </li>
+      </ul>
+      <div class="exp-tags">
+        <span>ASP.NET MVC</span><span>SQL Server</span><span>4D</span
+        ><span>SAGE 100</span><span>CRM</span>
+      </div>
+
+      <p>
+        <strong>NEWPACK</strong> – Stagiaire développeur (07/2022 – 12/2022)
+      </p>
+      <ul>
+        <li>Analyse des besoins des utilisateurs</li>
+        <li>Conceptions des solutions logicielles</li>
+        <li>
+          Développement des applications avec WinForms et ASP .NET MVC et SQL
+          Serveur comme base de données
+        </li>
+        <li>Maintenance et améliorations des applications existantes</li>
+      </ul>
+      <div class="exp-tags">
+        <span>WinForms</span><span>ASP.NET</span><span>SQL Server</span>
+      </div>
+    </div>
+
+    <!-- Compétences -->
+    <div class="section">
+      <h2>Compétences</h2>
+      <div class="skills">
+        <span>C#</span><span>Python</span><span>Java</span><span>PHP</span
+        ><span>JavaScript</span> <span>TypeScript</span><span>SQL</span
+        ><span>.NET Core</span><span>Laravel</span> <span>Angular</span
+        ><span>SignalR</span><span>EF Core</span><span>Serilog</span>
+        <span>DevExpress</span><span>Telerik</span><span>SQL Server</span
+        ><span>MySQL</span> <span>Agile</span><span>REST</span
+        ><span>JQuery</span><span>Visual Studio</span>
+      </div>
+    </div>
+
+    <!-- Formation -->
+    <div class="section">
+      <h2>Formation</h2>
+
+      <div class="education-item">
+        <div>
+          <strong>Université de Côte d’Azur</strong> – Master 2 MIAGE MBDS
+          Mobiquité, Big Data et Intégration de système (2023 – 2024)
+        </div>
+        <div class="education-location">Nice, France</div>
+      </div>
+
+      <div class="education-item">
+        <div>
+          <strong>ITUniversity</strong> – Master 1 en informatique (2022 – 2023)
+        </div>
+        <div class="education-location">Antananarivo, Madagascar</div>
+      </div>
+
+      <div class="education-item">
+        <div>
+          <strong>ITUniversity</strong> – Licence en développement
+          d’application, web (2019 – 2022)
+        </div>
+        <div class="education-location">Antananarivo, Madagascar</div>
+      </div>
+    </div>
+
+    <!-- Projets -->
+    <div class="section">
+      <h2 data-lang="fr" class="active">Projets</h2>
+      <h2 data-lang="en">Projects</h2>
+      <div class="project-card">
+        <img
+          src="https://opengraph.githubassets.com/1/Lacoste27/big_data_tpa"
+          alt="preview github"
+        />
+        <div class="project-card-content">
+          <a href="https://github.com/Lacoste27/big_data_tpa" target="_blank">
+            GitHub – Lacoste27/big_data_tpa
+          </a>
+          <p>
+            Analyse de la clientèle d’un concessionnaire automobile pour la
+            recommandation de modèles de véhicules
+          </p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img
+          src="https://opengraph.githubassets.com/1/Lacoste27/Base"
+          alt="preview github"
+        />
+        <div class="project-card-content">
+          <a href="https://github.com/Lacoste27/Base" target="_blank">
+            GitHub – Lacoste27/Base
+          </a>
+          <p>Accès à la base de donnée généralisé avec java</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img
+          src="https://opengraph.githubassets.com/1/Lacoste27/Mini-Framework"
+          alt="preview github"
+        />
+        <div class="project-card-content">
+          <a href="https://github.com/Lacoste27/Mini-Framework" target="_blank">
+            GitHub – Lacoste27/Mini-Framework
+          </a>
+          <p>Création d'un framework web MVC avec java servlet</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>&copy; 2025 Robsona Tsiory</footer>
+
+    <!-- JavaScript - Toggle Theme -->
+    <script>
+      function toggleTheme() {
+        document.body.classList.toggle("dark-mode");
+        const icon = document.querySelector(".theme-toggle");
+        icon.textContent = document.body.classList.contains("dark-mode")
+          ? "🌞"
+          : "🌙";
+      }
+
+      function switchLang(lang) {
+        document.querySelectorAll("[data-lang]").forEach((el) => {
+          el.classList.remove("active");
+          if (el.getAttribute("data-lang") === lang) {
+            el.classList.add("active");
+          }
+        });
+        document.documentElement.lang = lang;
+      }
+    </script>
+  </body>
+</html>
