@@ -3,26 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Portfolio de Robsona Tsiory, développeur web, ingénieur de données, spécialisé dans le développement .NET et Big Data. Découvrez mes projets, compétences et expériences professionnelles."
-    />
-    <meta name="robots" content="index, follow" />
-    <meta
-      name="keywords"
-      content="portfolio, développeur, web, Robsona Tsiory, Développeur .NET, Développeur Fullstack, Big data"
-    />
-    <meta name="author" content="Robsona Tsiory" />
-
-    <meta property="og:title" content="Robsona Tsiory - CV" />
-    <meta
-      property="og:description"
-      content="Portfolio de Robsona Tsiory, développeur web, ingénieur de données, spécialisé dans le développement .NET et Big Data. Découvrez mes projets, compétences et expériences professionnelles."
-    />
-    <meta property="og:url" content="https://lacoste27.github.io/" />
-    <meta property="og:type" content="website" />
-
-    <title>Robsona Tsiory - CV</title>
+    <title>Robsona Tsiory - Portfolio</title>
 
     <!-- Font Awesome -->
     <link
@@ -31,10 +12,6 @@
     />
 
     <style>
-      html {
-        scroll-behavior: smooth;
-      }
-
       :root {
         --bg-color: #fff;
         --text-color: #000;
@@ -258,115 +235,6 @@
       [data-lang].active {
         display: block;
       }
-
-      /* Navbar styles */
-      .navbar {
-        background: var(--bg-color);
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-      }
-
-      .navbar-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 15px 20px;
-      }
-
-      .navbar-brand {
-        font-size: 1.5em;
-        font-weight: bold;
-      }
-
-      .navbar-logo {
-        color: var(--link-color);
-        text-decoration: none;
-      }
-
-      .navbar-menu {
-        list-style: none;
-        display: flex;
-        justify-content: center; /* Center menu items horizontally */
-        gap: 30px;
-        margin: 0;
-        padding: 0;
-        flex-grow: 1; /* Allow menu to take available space for centering */
-      }
-
-      .navbar-menu li a {
-        text-decoration: none;
-        color: var(--link-color);
-        font-weight: 500;
-        font-size: 1.1em;
-        transition: color 0.3s, transform 0.2s;
-      }
-
-      .navbar-menu li a:hover {
-        color: #0366d6;
-        transform: translateY(-2px);
-      }
-
-      .navbar-toggle {
-        display: none;
-        background: none;
-        border: none;
-        color: var(--text-color);
-        font-size: 1.8em;
-        cursor: pointer;
-        transition: color 0.3s;
-      }
-
-      .navbar-toggle:hover {
-        color: #0366d6;
-      }
-
-      @media (max-width: 768px) {
-        .navbar-container {
-          justify-content: space-between;
-        }
-
-        .navbar-menu {
-          display: none;
-          flex-direction: column;
-          align-items: center; /* Center menu items vertically in mobile view */
-          position: absolute;
-          top: 100%;
-          left: 0;
-          width: 100%;
-          background: var(--card-bg);
-          padding: 20px;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-          transform: translateY(-10px);
-          opacity: 0;
-          transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-
-        .navbar-menu.active {
-          display: flex;
-          transform: translateY(0);
-          opacity: 1;
-        }
-
-        .navbar-menu li {
-          margin: 10px 0;
-        }
-
-        .navbar-menu li a {
-          font-size: 1.2em;
-        }
-
-        .navbar-toggle {
-          display: block;
-        }
-      }
-
-      .navbar-menu li a.active {
-        color: #0366d6;
-        border-bottom: 2px solid #0366d6;
-      }
     </style>
   </head>
 
@@ -411,69 +279,93 @@
       </div>
     </header>
 
-    <nav class="navbar">
-      <div class="navbar-container">
-        <button
-          class="navbar-toggle"
-          aria-label="Toggle navigation"
-          aria-expanded="false"
-        >
-          <i class="fas fa-bars"></i>
-        </button>
-        <ul class="navbar-menu">
-          <li><a href="#resume">Résumé</a></li>
-          <li><a href="#experiences">Expériences</a></li>
-          <li><a href="#competences">Compétences</a></li>
-          <li><a href="#formation">Formation</a></li>
-          <li><a href="#projets">Projets</a></li>
-        </ul>
-      </div>
-    </nav>
-
     <!-- Résumé -->
-    <div id="resume" class="section">
+    <div class="section">
       <h2>Résumé</h2>
       <p>
-        Ingénieur informatique avec une expertise spécialisée avec la
-        technologie .NET et dans le développement de solutions logicielles
-        robustes et évolutives, couvrant toutes les étapes du processus, de
-        l'analyse des besoins à la conception de systèmes sur mesure. Fort d'une
-        solide connaissance du Big Data, j'ai participé à de nombreux projets
-        dans des domaines variés, démontrant ma capacité à m'adapter à des
-        environnements et des équipes diversifiés. Curieux et polyvalent, je
-        relève efficacement les défis de chaque projet grâce à mon approche
-        méthodique et collaborative.
+        Ingénieur informatique spécialisé en technologies .NET, avec une expertise dans le développement de logiciels spécifiques robustes et évolutifs, couvrant l’ensemble du cycle de vie des projets, de l’analyse des besoins à la conception et au déploiement. Expérimenté dans le développement web (ASP.NET Core, MVC), le développement mobile multiplateforme (.NET MAUI), la migration et transformation de données (SSIS/ETL), ainsi que l’intégration de systèmes métiers tels que Sage. Curieux et polyvalent, je combine rigueur technique et approche collaborative pour livrer des projets sur mesure, améliorer la productivité des utilisateurs et m’adapter rapidement à des environnements et domaines variés.
       </p>
     </div>
 
     <!-- Expériences -->
-    <div id="experiences" class="section">
+    <div class="section">
       <h2>Expériences professionnelles</h2>
 
       <p>
         <strong>Indépendant</strong> – Consultant développeur .NET (06/2024 –
-        Aujourd’hui, Lyon - à distance)
+        Aujourd’hui, Lyon – à distance)
       </p>
       <ul>
         <li>
-          Création et déploiement d’un robot automatisé pour les migrations de
-          données en utilisant SQL Server Intégration Services (SSIS)
+          Développement de modules web avec <strong>ASP.NET Core</strong> : conception
+          et implémentation de fonctionnalités métiers modulaires utilisées par
+          plus de 100 utilisateurs, en appliquant les bonnes pratiques
+          (architecture en couches, sécurité, performance) afin de garantir
+          évolutivité et maintenabilité.
         </li>
         <li>
-          Participation à la création d’un module d'aide à la prescription,
-          permettant aux utilisateurs de bénéficier de recommandations
-          personnalisées.
+          Maintenance et évolution d’applications existantes : analyse et correction
+          de bugs, optimisation des performances et mise à jour des composants
+          techniques sur des applications en production, ayant permis une réduction
+          de 30&nbsp;% des incidents et une amélioration notable de la satisfaction
+          utilisateur.
         </li>
         <li>
-          Conception et développement d’un module de prescription électronique,
-          facilitant la digitalisation des prescriptions.
+          Migration de données avec <strong>SSIS</strong> : développement de flux ETL
+          automatisés via SQL Server Integration Services pour le transfert et la
+          transformation de centaines de milliers d’enregistrements, tout en
+          garantissant l’intégrité et la cohérence des données.
         </li>
         <li>
-          Création des nouveaux modules avec ASP .NET Core (Telerik,
-          DevExpress), application mobile avec MAUI
+          Utilisation de <strong>DevExpress</strong> et <strong>Telerik</strong> :
+          intégration de composants UI avancés (grilles, graphiques, planificateurs,
+          dashboards) et personnalisation d’interfaces complexes afin d’améliorer
+          l’expérience utilisateur et la productivité.
         </li>
-        <li>Expérience dans les systèmes d’information du domaine médical.</li>
+        <li>
+          Développement mobile avec <strong>.NET MAUI</strong> : conception d’une
+          application multiplateforme Android / iOS incluant navigation,
+          formulaires, appels API et persistance locale, déployée dans un contexte
+          métier réel.
+        </li>
+        <li>
+          Conception et développement d’un <strong>agent IA secrétaire</strong> :
+          agent conversationnel intelligent pour la prise de rendez-vous, la
+          collecte d’informations et la planification automatique, permettant une
+          réduction de 40&nbsp;% de la charge administrative et une meilleure
+          réactivité du service.
+        </li>
+        <li>
+          Expérience confirmée dans le <strong>secteur médical</strong> :
+          participation à des projets de prescription électronique en France, avec
+          intégration de MSSanté, Apicrypt et e-prescription, et gestion sécurisée
+          des données médicales dans le respect des contraintes réglementaires des
+          logiciels de santé.
+        </li>
+      </ul> 
+
+     <p>
+        <strong>Indépendant</strong> – Consultant développeur .NET (01/2024 – 05/2024)
+      </p>
+      <ul>
+        <li>
+          Conception et développement d’une <strong>application web sur mesure</strong>
+          de saisie des opérations de caisse en <strong>ASP.NET Core</strong>, avec
+          intégration directe au système de gestion <strong>Sage</strong> via les
+          <strong>Objets Métiers (COM)</strong>, permettant la saisie rapide des
+          encaissements et une synchronisation en temps réel avec Sage, dans le
+          respect des contraintes comptables et métiers du client.
+        </li>
+        <li>
+          Développement d’une solution <strong>personnalisée et optimisée en coûts</strong> :
+          bien que le module soit payant, l’application sur mesure a permis une
+          réduction significative des coûts par rapport aux solutions standards du
+          marché, tout en répondant précisément aux besoins spécifiques du client et
+          en améliorant la productivité des utilisateurs.
+        </li>
       </ul>
+
+
       <div class="exp-tags">
         <span>.NET Core</span><span>SSIS</span><span>Telerik</span
         ><span>DevExpress</span><span>MAUI</span><span>SQL Server</span
@@ -482,40 +374,59 @@
       </div>
 
       <p>
-        <strong>NEWPACK</strong> – Développeur .NET Junior (01/2023 – 04/2024,
+        <strong>Newpack</strong> – Développeur .NET Junior (01/2023 – 04/2024,
         Antananarivo)
       </p>
       <ul>
         <li>
-          Création d’une application avec ASP .NET MVC et SQL Server comme base
-          de données pour la gestion d’un entrepôt (suivi de stock, des
-          emplacements des produits, …)
+          Participation à la migration d’une application métier développée sous
+          <strong>4D</strong> vers une architecture moderne
+          <strong>ASP.NET MVC (web)</strong> et <strong>WinForms (client lourd)</strong>,
+          utilisée par plus de 50 utilisateurs, améliorant l’ergonomie (+40 %),
+          la maintenabilité et l’intégration dans l’écosystème Microsoft.
         </li>
         <li>
-          Création d’un CRM en interne pour la gestion des clients, tableau de
-          bords pour chaque client
+          Réalisation de la migration de plus de <strong>300 000 enregistrements</strong>
+          vers <strong>SQL Server</strong> à l’aide de <strong>SSIS (ETL)</strong> via
+          Visual Studio, avec mise en place de flux automatisés garantissant la
+          qualité, la cohérence et l’intégrité des données (taux d’erreur &lt; 1 %).
         </li>
         <li>
-          Développement d'un site web pour la gestion des plannings de
-          maintenance industrielle, permettant de suivre qui effectue quelle
-          tâche et à quelle date.
+          Développement d’une application de <strong>gestion d’entrepôt</strong> en
+          <strong>ASP.NET MVC / SQL Server</strong> pour le suivi des stocks, la gestion
+          de plus de 1 500 références, les mouvements de marchandises et les rapports,
+          permettant une réduction de 30 % des erreurs de stock et un gain de temps
+          opérationnel significatif.
         </li>
         <li>
-          Migration d’une application 4D vers ASP .NET Core, migration des
-          données en utilisant SQL Server Intégration Services
+          Conception et développement d’un site web de
+          <strong>gestion des plannings de maintenance industrielle</strong>,
+          permettant de planifier plus de 200 interventions mensuelles et de suivre
+          les techniciens, les tâches et les dates, offrant une vision centralisée
+          aux responsables de maintenance.
         </li>
         <li>
-          Liaison des applications créer avec SAGE 100 à partir d’objet métier
-          SAGE (gestion de stock, gestion des clients, …)
+          Intégration de <strong>Sage 100</strong> via les
+          <strong>Objets Métiers (COM)</strong> avec automatisation de la récupération
+          des données (commandes, livraisons, factures, tiers, articles), réduisant
+          de 50 % les saisies manuelles et améliorant la fiabilité des données, tout
+          en développant une expertise fonctionnelle des modules de gestion commerciale.
+        </li>
+        <li>
+          Participation aux missions de <strong>support informatique et
+          d’administration systèmes</strong> : maintenance matérielle et logicielle,
+          déploiement de plus de 100 postes, gestion d’Active Directory (comptes,
+          groupes, droits), contribuant à la continuité de service.
         </li>
       </ul>
+
       <div class="exp-tags">
         <span>ASP.NET MVC</span><span>SQL Server</span><span>4D</span
         ><span>SAGE 100</span><span>CRM</span>
       </div>
 
       <p>
-        <strong>NEWPACK</strong> – Stagiaire développeur (07/2022 – 12/2022)
+        <strong>Newpack</strong> – Stagiaire développeur (07/2022 – 12/2022)
       </p>
       <ul>
         <li>Analyse des besoins des utilisateurs</li>
@@ -532,7 +443,7 @@
     </div>
 
     <!-- Compétences -->
-    <div id="competences" class="section">
+    <div class="section">
       <h2>Compétences</h2>
       <div class="skills">
         <span>C#</span><span>Python</span><span>Java</span><span>PHP</span
@@ -546,20 +457,20 @@
     </div>
 
     <!-- Formation -->
-    <div id="formation" class="section">
+    <div class="section">
       <h2>Formation</h2>
 
       <div class="education-item">
         <div>
           <strong>Université de Côte d’Azur</strong> – Master 2 MIAGE MBDS
-          Mobiquité, Big Data et Intégration de système (2023 – 2024)
+          Mobiquité, Big Data et Intégration de système 
         </div>
         <div class="education-location">Nice, France</div>
       </div>
 
       <div class="education-item">
         <div>
-          <strong>ITUniversity</strong> – Master 1 en informatique (2022 – 2023)
+          <strong>ITUniversity</strong> – Master 1 en informatique
         </div>
         <div class="education-location">Antananarivo, Madagascar</div>
       </div>
@@ -567,14 +478,14 @@
       <div class="education-item">
         <div>
           <strong>ITUniversity</strong> – Licence en développement
-          d’application, web (2019 – 2022)
+          d’application, web
         </div>
         <div class="education-location">Antananarivo, Madagascar</div>
       </div>
     </div>
 
     <!-- Projets -->
-    <div id="projets" class="section">
+    <div class="section">
       <h2 data-lang="fr" class="active">Projets</h2>
       <h2 data-lang="en">Projects</h2>
       <div class="project-card">
@@ -642,30 +553,6 @@
         });
         document.documentElement.lang = lang;
       }
-
-      document.querySelector(".navbar-toggle").addEventListener("click", () => {
-        const menu = document.querySelector(".navbar-menu");
-        const toggle = document.querySelector(".navbar-toggle");
-        const isExpanded = toggle.getAttribute("aria-expanded") === "true";
-
-        menu.classList.toggle("active");
-        toggle.setAttribute("aria-expanded", !isExpanded);
-        toggle.innerHTML = menu.classList.contains("active")
-          ? '<i class="fas fa-times"></i>'
-          : '<i class="fas fa-bars"></i>';
-      });
-
-      document.querySelector(".navbar-toggle").addEventListener("click", () => {
-        const menu = document.querySelector(".navbar-menu");
-        const toggle = document.querySelector(".navbar-toggle");
-        const isExpanded = toggle.getAttribute("aria-expanded") === "true";
-
-        menu.classList.toggle("active");
-        toggle.setAttribute("aria-expanded", !isExpanded);
-        toggle.innerHTML = menu.classList.contains("active")
-          ? '<i class="fas fa-times"></i>'
-          : '<i class="fas fa-bars"></i>';
-      });
     </script>
   </body>
 </html>
